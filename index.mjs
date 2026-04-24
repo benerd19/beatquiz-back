@@ -54,11 +54,15 @@ app.get('/song/:trackId', async (req, res) => {
 
         const song = await response.json()
 
+        console.log(song)
+
         res.json({
             id: song.id,
             title: song.title,
             preview: song.preview,
             image: song.album.cover_big,
+            artist: song.artist.name,
+            artistPhoto: song.artist.picture_big,
         })
     } catch (e) {
         res.status(500).json({ error: e.message })
