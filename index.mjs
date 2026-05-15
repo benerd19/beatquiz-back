@@ -63,6 +63,7 @@ app.get('/song/:trackId', async (req, res) => {
             image: song.album.cover_big,
             artist: song.artist.name,
             artistPhoto: song.artist.picture_big,
+            album: song.album.title,
         })
     } catch (e) {
         res.status(500).json({ error: e.message })
